@@ -1,0 +1,145 @@
+<Project>
+    <!-- cctoggle test file-->
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.LiveTemplateMsbTask" AssemblyFile="$(JyMsbTaskDll)" />
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCRestoreTask" AssemblyFile="$(JyMsbTaskDll)" />
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCTask" AssemblyFile="$(JyMsbTaskDll)" />
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="$(JyMsbTaskDll)" />
+
+
+	 <PropertyGroup>
+		<RunCCTask >false</RunCCTask>
+
+  
+
+     </PropertyGroup>
+
+
+
+	<ItemGroup>
+
+		<ccfiles Include="Views\Home\Index.cshtml" />
+	</ItemGroup>
+
+
+
+
+
+	<Target Name="ToggleConditionalFiles" BeforeTargets="BeforeBuild" Condition="'$(RunCCTask)' == 'true'">
+		<CCToggle ProjectFilePath="$(ProjectPath)" DryRun="false" Disable="false"  Items="@(ccfiles)" ListFileOnly="false"/>
+		<Message Text="$(JyMsbTaskDll)*********************" Importance="High"/>
+
+
+	</Target>
+
+
+	
+	
+	
+	
+	<!--
+	
+	
+	
+	<ItemGroup>
+
+					<ccfiles Include="**\MainWindow.*" />
+
+
+	
+	    </ItemGroup>
+
+ 
+
+	
+	
+	
+	<Target Name="UpdateConditionalFiles" BeforeTargets="BeforeBuild" Condition="'$(RunCCTask)' == 'true'">
+		<CCTask ProjectFilePath="$(ProjectPath)" DryRun="false" Disable="false"  Items="@(ccfiles)" ListFileOnly="false"/>
+			<Message Text="$(JyMsbTaskDll)*********************" Importance="High"/>
+
+		
+	</Target>
+
+
+	
+	<Target Name="RestoreConditionalFiles" AfterTargets="AfterBuild" Condition="'$(RunCCTask)' == 'true'" >
+		<CCRestoreTask ProjectFilePath="$(ProjectPath)"  Items="@(ccfiles)"  DryRun="false" Disable="false"  TraceOn="false"/>
+	</Target>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--
+
+
+									    <ccfiles Include="App.xaml" type="literal" />
+
+					<ccfiles Include="**\*.xaml" Exclude="App.xaml" />
+
+	
+
+
+
+	
+  <Target Name="OnBuildFailure" AfterTargets="_CheckForErrors">
+    <Error Text="Build failed! This task runs when the build fails." />
+	<Message Text="AfterBuildOnError Happened *********************" Importance="High"/>
+
+  </Target>
+
+	
+
+	<Target Name="RestoreConditionalFiles" AfterTargets="AfterBuild" "ContinueOnError="WarnAndContinue">
+		<CCRestoreTask ProjectFilePath="$(ProjectPath)"  Items="@(ccfiles)"  DryRun="false" Disable="false" />
+	</Target>
+
+
+
+
+	<Target Name="AfterBuildOnError">
+		    <Message Text="AfterBuildOnError Happened *********************" Importance="High"/>
+
+ 		<CCRestoreTask ProjectFilePath="$(ProjectPath)" 
+										   Items="@(ccfiles)"
+										   DryRun="false" Disable="false" >
+		</CCRestoreTask>
+	</Target>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.targets', '$(MSBuildThisFileDirectory)../'))" />
+	
+	-->
+
+
+
+
+</Project>
+
+

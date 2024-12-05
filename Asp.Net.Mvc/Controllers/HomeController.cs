@@ -15,6 +15,13 @@ namespace Asp.Net.Mvc.Controllers
 
         public IActionResult Index()
         {
+
+            /*@@if jy1*/
+            string str = "jy1 is true" ;
+            /*@@else*/
+            string str = "jy1 is false";
+            /*@@endif*/
+
             return View();
         }
 
