@@ -1,0 +1,46 @@
+<Project>
+    <!-- cctoggle test file-->
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.LiveTemplateMsbTask" AssemblyFile="$(JyMsbTaskDll)" />
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCRestoreTask" AssemblyFile="$(JyMsbTaskDll)" />
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCTask" AssemblyFile="$(JyMsbTaskDll)" />
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="$(JyMsbTaskDll)" />
+
+
+	 <PropertyGroup>
+		<RunCCTask >true</RunCCTask>
+
+  
+
+     </PropertyGroup>
+
+
+
+	<ItemGroup>
+
+		<ccfiles Include="Components\Pages\Home.razor" />
+	</ItemGroup>
+
+
+
+
+
+	<Target Name="ToggleConditionalFiles" BeforeTargets="BeforeBuild" Condition="'$(RunCCTask)' == 'true'">
+		<CCToggle ProjectFilePath="$(ProjectPath)" DryRun="false" Disable="false"  Items="@(ccfiles)" ListFileOnly="false"/>
+		<Message Text="$(JyMsbTaskDll)*********************" Importance="High"/>
+
+
+	</Target>
+
+
+
+
+
+
+
+
+
+
+
+</Project>
+
+

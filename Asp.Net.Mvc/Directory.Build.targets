@@ -7,7 +7,7 @@
 
 
 	 <PropertyGroup>
-		<RunCCTask >false</RunCCTask>
+		<RunCCTask >true</RunCCTask>
 
   
 
@@ -17,7 +17,7 @@
 
 	<ItemGroup>
 
-		<ccfiles Include="Views\Home\Index.cshtml" />
+		<ccfiles Include="Views\Home\Index.cshtml;Controllers\HomeController.cs" />
 	</ItemGroup>
 
 
@@ -30,46 +30,6 @@
 
 
 	</Target>
-
-
-	
-	
-	
-	
-	<!--
-	
-	
-	
-	<ItemGroup>
-
-					<ccfiles Include="**\MainWindow.*" />
-
-
-	
-	    </ItemGroup>
-
- 
-
-	
-	
-	
-	<Target Name="UpdateConditionalFiles" BeforeTargets="BeforeBuild" Condition="'$(RunCCTask)' == 'true'">
-		<CCTask ProjectFilePath="$(ProjectPath)" DryRun="false" Disable="false"  Items="@(ccfiles)" ListFileOnly="false"/>
-			<Message Text="$(JyMsbTaskDll)*********************" Importance="High"/>
-
-		
-	</Target>
-
-
-	
-	<Target Name="RestoreConditionalFiles" AfterTargets="AfterBuild" Condition="'$(RunCCTask)' == 'true'" >
-		<CCRestoreTask ProjectFilePath="$(ProjectPath)"  Items="@(ccfiles)"  DryRun="false" Disable="false"  TraceOn="false"/>
-	</Target>-->
-
-
-
-
-
 
 
 

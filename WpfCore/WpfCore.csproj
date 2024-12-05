@@ -7,5 +7,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+	<PropertyGroup>
+		<DefineConstants>$(DefineConstants);jy1</DefineConstants>
+	</PropertyGroup>
 
 </Project>

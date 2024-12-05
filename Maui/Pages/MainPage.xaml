@@ -36,7 +36,11 @@
                 <ScrollView>
                     <VerticalStackLayout Spacing="{StaticResource LayoutSpacing}" Padding="{StaticResource LayoutPadding}">
                         <controls:CategoryChart />
-                        <Label Text="Projects" Style="{StaticResource Title2}"/>
+                        <!--@@if jy1-->
+                        <Label Text="jy1 true" Style="{StaticResource Title2}"/>
+                        <!--@@else-->
+                        <Label Text="jy1 false" Style="{StaticResource Title2}"/>
+                        <!--@@endif-->
                         <ScrollView Orientation="Horizontal" Margin="-30,0">
                             <HorizontalStackLayout 
                                 Spacing="15" Padding="30,0"
