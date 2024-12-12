@@ -8,7 +8,7 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 	<PropertyGroup>
-		<DefineConstants>$(DefineConstants);jy1</DefineConstants>
+		<DefineConstants>$(DefineConstants);jy1x</DefineConstants>
 	</PropertyGroup>
 
 </Project>

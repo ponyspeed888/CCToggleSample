@@ -5,13 +5,14 @@ It does so by by comment/uncomment section of code depend on whether a condition
 
 A CCToggle is defined as (for xml):
 
-<!--@@if yoursymbol-->
+
+	<!--@@if yoursymbol-->
+	
+	
+	<!--@@else-->
 
 
-<!--@@else-->
-
-
-<!--@@endif-->
+	<!--@@endif-->
 
 Please change the comment start/end depend on your file type.  Do not add any white space
 
@@ -20,7 +21,8 @@ To see what are changed for cctoggle in the sample project, search for @@if stri
 
 How to use :
 
-Install cctoggle package
+Copy folder TaskDlls to your project
+or Install cctoggle package (To be done)
 Modify Directory.Build.targets to specify files containing cctoggle
 Add cctoggle comment block to those files
 Set/unset your conditional compilation symbol

@@ -8,12 +8,12 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <!--@@if jy1-->
-        <Button Content="jy1 true" />
-        <!--@@else-->
 <!--tt
-        <Button Content="jy1 false" />
+        <Button Content="jy1 true" />
         tt-->
-<!--@@endif-->
+<!--@@else-->
+        <Button Content="jy1 false" />
+        <!--@@endif-->
 
         <!--@@if jy2-->
 <!--tt
