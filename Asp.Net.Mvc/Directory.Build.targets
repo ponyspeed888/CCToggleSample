@@ -1,8 +1,8 @@
 <Project>
     <!-- cctoggle test file-->
-	<UsingTask TaskName="MSBuildTasks.Source.Tasks.LiveTemplateMsbTask" AssemblyFile="$(JyMsbTaskDll)" />
+	<!--<UsingTask TaskName="MSBuildTasks.Source.Tasks.LiveTemplateMsbTask" AssemblyFile="$(JyMsbTaskDll)" />
 	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCRestoreTask" AssemblyFile="$(JyMsbTaskDll)" />
-	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCTask" AssemblyFile="$(JyMsbTaskDll)" />
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCTask" AssemblyFile="$(JyMsbTaskDll)" />-->
 	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="TaskDlls\MSBuildTasks.dll" />
 
 
