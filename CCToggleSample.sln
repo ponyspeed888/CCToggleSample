@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.Mvc", "Asp.Net.Mvc\Asp.Net.Mvc.csproj", "{3009E222-7C00-4A82-A8CC-B1D41D142917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCore", "WpfCore\WpfCore.csproj", "{89654945-D760-4C38-94A8-BFAE76CD1616}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui", "Maui\Maui.csproj", "{23601C14-E463-416D-ADA8-AF763436B47F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csproj", "{93797062-F405-48F0-8253-F78810680E94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85906F0E-BED3-40F3-80A6-7B7D51FAC410}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppClean", "WpfAppClean\WpfAppClean.csproj", "{4EAAF529-FF35-4E12-A247-49CBA518C28E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3009E222-7C00-4A82-A8CC-B1D41D142917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3009E222-7C00-4A82-A8CC-B1D41D142917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3009E222-7C00-4A82-A8CC-B1D41D142917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3009E222-7C00-4A82-A8CC-B1D41D142917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89654945-D760-4C38-94A8-BFAE76CD1616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89654945-D760-4C38-94A8-BFAE76CD1616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89654945-D760-4C38-94A8-BFAE76CD1616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89654945-D760-4C38-94A8-BFAE76CD1616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23601C14-E463-416D-ADA8-AF763436B47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23601C14-E463-416D-ADA8-AF763436B47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23601C14-E463-416D-ADA8-AF763436B47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23601C14-E463-416D-ADA8-AF763436B47F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93797062-F405-48F0-8253-F78810680E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93797062-F405-48F0-8253-F78810680E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93797062-F405-48F0-8253-F78810680E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93797062-F405-48F0-8253-F78810680E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EAAF529-FF35-4E12-A247-49CBA518C28E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EAAF529-FF35-4E12-A247-49CBA518C28E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EAAF529-FF35-4E12-A247-49CBA518C28E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EAAF529-FF35-4E12-A247-49CBA518C28E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
