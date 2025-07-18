@@ -1,0 +1,28 @@
+
+<Project>
+	
+	<!--<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="bin\$(Configuration)\$(TargetFramework)\$(RuntimeIdentifier)\ccToggle.dll" />-->
+
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="U:\ccToggle\ccToggle\bin\Debug\netstandard2.0\ccToggle.dll" />
+
+	<!--<UsingTask TaskName="MSBuildTasks.Source.Tasks.indexGenerator" AssemblyFile="U:\ccToggle\ccToggle\bin\Debug\netstandard2.0\ccToggle.dll" />-->
+
+
+	<!--<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="bin\$(Configuration)\$(TargetFramework)\win10-x64\ccToggle.dll" />-->
+
+	<PropertyGroup>
+		<RunCCTask >true</RunCCTask>
+	</PropertyGroup>
+
+	
+	<ItemGroup>
+		<ccfiles Include="Pages\HomePage.xaml" />
+	</ItemGroup>
+
+	
+	<Target Name="ToggleConditionalFiles" BeforeTargets="BeforeCompile" Condition="'$(RunCCTask)' == 'true'">
+		<CCToggle ProjectFilePath="$(ProjectPath)" DryRun="false" Disable="false"  Items="@(ccfiles)"
+				  TraceOn="true"  ListFileOnly="false" Const="ANDROID" TraceLevel="999"/>
+	</Target>
+
+</Project>

@@ -1,0 +1,23 @@
+
+<Project>
+	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="MyPackageContent\ccToggle.dll" />
+
+	<!--<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="bin\$(Configuration)\$(TargetFramework)\$(RuntimeIdentifier)\ccToggle.dll" />-->
+	
+
+	<PropertyGroup>
+		<RunCCTask >true</RunCCTask>
+	</PropertyGroup>
+
+	
+	<ItemGroup>
+		<ccfiles Include="MainWindow.*" />
+	</ItemGroup>
+
+	
+	<Target Name="ToggleConditionalFiles" BeforeTargets="BeforeCompile" Condition="'$(RunCCTask)' == 'true'">
+		<CCToggle ProjectFilePath="$(ProjectPath)" DryRun="false" Disable="false"  Items="@(ccfiles)"
+				  TraceOn="true"  ListFileOnly="false" />
+	</Target>
+
+</Project>

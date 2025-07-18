@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +19,14 @@ namespace WpfCore
         public MainWindow()
         {
             InitializeComponent();
+            var y = "xx";
+            /*  @@if jy1  */
+            y = "jy1";
+            /*@@else*/
+/*tt
+                    y = "jy1 not";
+                    tt*/
+/*@@endif*/
         }
     }
 }
