@@ -25,13 +25,15 @@ The development of the package ponyspeed888.MSBuildTasks.ccToggle is paused, due
      multi-targeting MAUI project type, which is a important use case.  Sample targets file and dlls should be copied
 	  from MyPackageContent in the WpfCore Sample project
 Move the file MyPackageContent\Directory.Build.targets to project root
+For MAUI project, Move the file MyPackageContent\Directory.Build.targets.Maui to project root and remove .Maui extension
 Modify Directory.Build.targets to specify files to be processed by ccToggle (ccfiles property)
 Add cctoggle comment blocks to those files
 Set/unset your conditional compilation symbol
 
 Important note for MAUI project : Because of the multi-targeting natural of MAUI, ccToggle task can not read defined
   CC symbols, so you have to defined it manually using Const="ANDROID;A;B" task attribute, and set BeforeTargets="BeforeCompile"
-
+  Unfortunately, this mean that when you switch build between mobile and desktop, you have to update the Const="xxx"
+  manually.
 
 
 Limitaions :

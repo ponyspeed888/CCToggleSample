@@ -21,12 +21,12 @@ namespace WpfCore
             InitializeComponent();
             var y = "xx";
             /*  @@if jy1  */
-            y = "jy1";
-            /*@@else*/
 /*tt
+            y = "jy1";
+            tt*/
+/*@@else*/
                     y = "jy1 not";
-                    tt*/
-/*@@endif*/
+                    /*@@endif*/
         }
     }
 }
