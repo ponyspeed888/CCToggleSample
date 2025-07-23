@@ -24,8 +24,7 @@ How to use :
 The development of the package ponyspeed888.MSBuildTasks.ccToggle is paused, due to difficulty in single project
      multi-targeting MAUI project type, which is a important use case.  Sample targets file and dlls should be copied
 	  from MyPackageContent in the WpfCore Sample project
-Move the file MyPackageContent\Directory.Build.targets to project root
-For MAUI project, Move the file MyPackageContent\Directory.Build.targets.Maui to project root and remove .Maui extension
+Directory.Build.targets for MAUI project is very different from one in wpf project
 Modify Directory.Build.targets to specify files to be processed by ccToggle (ccfiles property)
 Add cctoggle comment blocks to those files
 Set/unset your conditional compilation symbol

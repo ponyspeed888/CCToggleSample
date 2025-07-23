@@ -16,5 +16,8 @@
 	<ItemGroup>
 	  <Page Remove="MainWindow - Copy.xaml" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="MyPackageContent\" />
+	</ItemGroup>
 
 </Project>
