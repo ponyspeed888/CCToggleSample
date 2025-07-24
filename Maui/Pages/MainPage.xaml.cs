@@ -1,4 +1,4 @@
-﻿using Maui.Models;
+using Maui.Models;
 using Maui.PageModels;
 
 namespace Maui.Pages

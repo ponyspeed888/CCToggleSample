@@ -1,37 +1,65 @@
 
 <Project>
 
-	<!-- To run task manually
-	
-		msbuild Maui\Maui.csproj /t:ToggleConditionalFilesAndroid
-		msbuild Maui\Maui.csproj /t:ToggleConditionalFilesWindows
-
-	-->
 	<!--<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="bin\$(Configuration)\$(TargetFramework)\$(RuntimeIdentifier)\ccToggle.dll" />-->
 
 	<UsingTask TaskName="MSBuildTasks.Source.Tasks.CCToggle" AssemblyFile="MyPackageContent\ccToggle.dll" />
+
+	<PropertyGroup>
+		<!--set default values so that these value will never be empty string, and always true or false-->
+		<IsAndroid>false</IsAndroid>
+		<IsWindows>false</IsWindows>
+		<RunCCAndroid>false</RunCCAndroid>
+		<RunCCWindows>false</RunCCWindows>
+	</PropertyGroup>
 
 	<PropertyGroup>
 		<RunCCTask >true</RunCCTask>
 		<Before>BeforeCompile</Before>
 		<IsAndroid Condition=" '$(TargetFramework)' != '' and $(TargetFramework.Contains('android')) ">true</IsAndroid>
 		<IsWindows Condition=" '$(TargetFramework)' != '' and $(TargetFramework.Contains('windows')) ">true</IsWindows>
+		<RunCCAndroid Condition="$(RunCCTask) And $(IsAndroid) ">true</RunCCAndroid>
+		<RunCCWindows Condition="$(RunCCTask) And $(IsWindows) ">true</RunCCWindows>
 	</PropertyGroup>
 
 
-	<ItemGroup>
-		<ccfiles Include="Pages\MainPage.xaml" />
-	</ItemGroup>
 
 	
-	<Target Name="ToggleConditionalFilesAndroid" BeforeTargets="$(before)" Condition="'$(RunCCTask)' == 'true' And '$(IsAndroid)' == 'true'">
-		<CCToggle ProjectFilePath="$(ProjectPath)" DryRun="false" Disable="false"  Items="@(ccfiles)"
-				  TraceOn="true"  ListFileOnly="false" Const="ANDROID;jy1" TraceLevel="999"/>
+	<Target Name="ToggleConditionalFilesAndroid" BeforeTargets="$(before)" Condition="$(RunCCAndroid)">
+		<CCToggle ProjectFilePath="$(MSBuildProjectFullPath)" DryRun="false" Disable="false"  Items="@(ccfiles)"
+				  TraceOn="true"  ListFileOnly="false" Const="$(AndroidSymbols)" TraceLevel="$(TraceLevel)"/>
 	</Target>
 
-	<Target Name="ToggleConditionalFilesAndroid" BeforeTargets="$(before)" Condition="'$(RunCCTask)' == 'true' And '$(IsWindows)' == 'true'">
-		<CCToggle ProjectFilePath="$(ProjectPath)" DryRun="false" Disable="false"  Items="@(ccfiles)"
-				  TraceOn="true"  ListFileOnly="false" Const="WINDOWS;jy1" TraceLevel="999"/>
+	<Target Name="ToggleConditionalFilesWindows" BeforeTargets="$(before)" Condition="$(RunCCWindows)">
+		<CCToggle ProjectFilePath="$(MSBuildProjectFullPath)" DryRun="false" Disable="false"  Items="@(ccfiles)"
+				  TraceOn="true"  ListFileOnly="false" Const="$(WindowsSymbols)" TraceLevel="$(TraceLevel)"/>
 	</Target>
 
+
+	<!--Change Below
+	* You don't need you change anything above, just change lines below to your need
+	
+	
+	
+	-->
+
+	<PropertyGroup>
+		<AndroidSymbols>ANDROID;jy1</AndroidSymbols>
+		<WindowsSymbols>WINDOWS;jy1</WindowsSymbols>
+		<TraceLevel>10</TraceLevel>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ccfiles Include="Pages\MainPage.xaml;Pages\MainPage.xaml.cs" />
+	</ItemGroup>
+
+
+	<!-- To run task manually
+	
+		msbuild Maui\Maui.csproj /t:ToggleConditionalFilesAndroid  /p:RunCCAndroid=true
+		msbuild Maui\Maui.csproj /t:ToggleConditionalFilesWindows  /p:RunCCWindows=true
+
+	-->
+
+	
 </Project>

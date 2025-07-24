@@ -1,5 +1,11 @@
 # CCToggleSample
 
+Update log 
+
+2025/07/24 : Update MAUI Directory.Build.targets, so that you can run it manually
+
+
+
 CCToggle is a package that act like a conditional compilation for non language files like xml, xaml, razor.
 It does so by by comment/uncomment section of code depend on whether a conditional compilation is defined or not
 
@@ -25,14 +31,15 @@ The development of the package ponyspeed888.MSBuildTasks.ccToggle is paused, due
      multi-targeting MAUI project type, which is a important use case.  Sample targets file and dlls should be copied
 	  from MyPackageContent in the WpfCore Sample project
 Directory.Build.targets for MAUI project is very different from one in wpf project
-Modify Directory.Build.targets to specify files to be processed by ccToggle (ccfiles property)
+Modify Directory.Build.targets to specify files to be processed by ccToggle (Lines after <!--Change Below)
 Add cctoggle comment blocks to those files
 Set/unset your conditional compilation symbol
 
 Important note for MAUI project : Because of the multi-targeting natural of MAUI, ccToggle task can not read defined
-  CC symbols, so you have to defined it manually using Const="ANDROID;A;B" task attribute, and set BeforeTargets="BeforeCompile"
-  Unfortunately, this mean that when you switch build between mobile and desktop, you have to update the Const="xxx"
-  manually.
+  CC symbols, so you have to defined it manually using AndroidSymbols or WindowsSymbols.
+  Unfortunately, I have only Android and Windows build target in my PC, so for the MAUI project, I only provide Android and
+     Windows in Directory.Build.targets, you have to add other platform to the code yourself
+
 
 
 Limitaions :
